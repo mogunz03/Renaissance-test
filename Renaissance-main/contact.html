@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Camille Mormal</title>
+    <link rel="stylesheet" href="styles.css" />
+    </head>
+  <body>
+    <nav class="header">
+        <a href="index.html"><img src="./assets/logo.png" alt="Camille Mormal Logo" class="nav-logo"></a>
+        <div class="nav-links">
+        <a href="index.html">Home</a>
+      <a href="contact.html" class="active-nav">Contact</a>
+    </div>
+    </nav>
+
+    <main style="padding-top: 15vh; padding-bottom: 10vh; max-width: 800px; margin: 0 auto;">
+        
+        <h1 style="font-size: 40px; text-transform: none; margin-bottom: 20px;">Let's Create Something Remarkable Together.</h1>
+        <p style="font-size: 1.1rem; font-weight: 300; line-height: 1.6; margin-bottom: 30px;">
+            I am currently available for new projects, creative consultation, and collaborations. For project inquiries, please use the contact information below.
+        </p>
+
+        <button class="open-modal-button" id="openConsultationModal" style="margin-bottom: 50px;">
+            Consultation Request
+        </button>
+
+        <footer style="border-top: 1px solid #fff; padding: 5vh 0 0;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 30px;">Get In Touch</h3>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <a href="mailto:hello@example.com" style="font-size: 1.8rem; font-weight: 400; text-transform: none;">hello@example.com</a>
+                <a href="#" target="_blank" style="font-size: 1.8rem; font-weight: 400;">Instagram</a>
+                <a href="#" target="_blank" style="font-size: 1.8rem; font-weight: 400;">Twitter</a>
+                <a href="#" target="_blank" style="font-size: 1.8rem; font-weight: 400;">Linkedin</a>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Consultation Request</h2>
+                <span class="close-button" id="closeModal">&times;</span>
+            </div>
+            
+            <form>
+                <div class="form-group">
+                    <label for="companyName">Company Name <span style="font-weight: 500;">(required)</span></label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address <span style="font-weight: 500;">(required)</span></label>
+                    <input type="email" id="emailAddress" name="emailAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject <span style="font-weight: 500;">(required)</span></label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message <span style="font-weight: 500;">(required)</span></label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <div class="services-needed">
+                    <label>Services Needed <span style="font-weight: 500;">(required)</span></label>
+                    <small style="display: block; margin-bottom: 10px; font-size: 0.8rem;">(Check all that apply)</small>
+                    
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="services" value="Tech Packing"> Tech Packing</label>
+                        <label><input type="checkbox" name="services" value="Samples"> Samples</label>
+                        <label><input type="checkbox" name="services" value="Pattern Making"> Pattern Making</label>
+                        <label><input type="checkbox" name="services" value="Grading"> Grading</label>
+                        <label><input type="checkbox" name="services" value="Production"> Production</label>
+                        <label><input type="checkbox" name="services" value="Fabric Sourcing"> Fabric Sourcing</label>
+                        <label><input type="checkbox" name="services" value="Fittings"> Fittings</label>
+                        <label><input type="checkbox" name="services" value="Packaging"> Packaging</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">SUBMIT</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('consultationModal');
+        const openBtn = document.getElementById('openConsultationModal');
+        const closeBtn = document.getElementById('closeModal');
+
+        // Function to open the modal
+        openBtn.onclick = function() {
+            modal.style.display = 'flex'; 
+            document.body.style.overflow = 'hidden'; // Prevent scrolling the main page
+        }
+
+        // Function to close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Close when clicking anywhere outside the modal content
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- NAVIGATION STYLES --- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 2em 0.3em; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  z-index: 100;
+}
+
+.nav-logo {
+  height: 5.0rem; 
+  width: auto;
+  filter: none;
+}
+
+.nav-links {
+  display: flex; 
+  gap: 1.5em; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #888888; 
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+nav a:hover {
+  color: #ffffff;
+  opacity: 1; 
+}
+
+nav a.active-nav {
+  color: #ffffff; 
+  font-weight: 500; 
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-family: inherit; 
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* --- HORIZONTAL SCROLL & TIMELINE STYLES (Specific to index.html) --- */
+
+.timeline {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh; 
+  padding: 2.25em 0.2em; 
+  display: flex;
+  justify-content: space-around;
+  z-index: 100;
+}
+
+.marker {
+  width: 1px;
+  height: 100%;
+  background: #fff;
+}
+
+.scroller {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+  font-family: "Akkurat Mono"; 
+  text-transform: uppercase;
+  background: #000;
+  cursor: pointer;
+  line-height: 120%;
+}
+
+.timeline span {
+  font-family: "Akkurat Mono";
+  font-size: 13px;
+  padding: 0 3em;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  width: 700vw; 
+  margin-top: 5em; 
+  height: 76.5vh; 
+  display: flex;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 100%; 
+  padding: 3em 0.3em 0 0.3em; 
+  display: flex;
+  gap: 0.3em; 
+  overflow: hidden;
+}
+
+/* Section 0: Image with 20% left margin */
+#section-0 {
+    justify-content: flex-start;
+    align-items: center;
+}
+#section-0 .img-1 {
+    margin-left: 20%; 
+    width: 79%; 
+    height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  width: 50%; 
+  font-family: "PP Neue Montreal"; 
+  font-weight: 400;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+p {
+  width: 40%; 
+  font-family: "PP Neue Montreal";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Section 1: Clean Paragraph Containment */
+#section-1 {
+  flex-direction: row; 
+  justify-content: flex-end;
+  align-items: flex-start; 
+}
+#section-1 p {
+    width: 40vw; 
+    padding-left: 1.5em; 
+    border-left: 1px solid #ffffff; 
+    font-size: 1rem; 
+}
+
+/* Section 5: Two-column layout */
+#section-5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#section-5 p {
+    border-left: none;
+    padding-left: 0; 
+}
+
+#section-2, #section-3, #section-4, #section-6 {
+    justify-content: center;
+    align-items: center;
+}
+
+.img-2, .img-3, .img-4, .img-6, .img-7, .img-9 { flex: 1; }
+.img-1, .img-5, .img-8 { flex: 2; }
+
+
+/* VIDEO EMBED STYLES */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1; 
+}
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- CONTACT PAGE / MODAL STYLES --- */
+
+/* Basic button style used on contact.html for the initial button */
+.open-modal-button {
+    display: inline-block; padding: 15px 40px; 
+    background: #000; color: #fff; border: 1px solid #fff;
+    text-transform: uppercase; font-family: inherit; cursor: pointer;
+    transition: all 0.2s ease;
+}
+.open-modal-button:hover {
+    background: #fff; color: #000;
+}
+
+/* Removed: .social-links and associated icon/email styling */
+
+/* Modal Styling */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    justify-content: center; align-items: center;
+}
+.modal-content {
+    background-color: #fff; color: #000; 
+    width: 100%; max-width: 550px;
+    padding: 30px 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative; font-family: inherit;
+}
+.modal-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 25px;
+}
+.modal-title {
+    font-size: 1.5rem; font-weight: 400; text-transform: none; 
+}
+.close-button {
+    font-size: 1.8rem; cursor: pointer; color: #000;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label, .services-needed label {
+    display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: 300;
+}
+.form-group input[type="text"], .form-group input[type="email"], .form-group textarea {
+    width: 100%; padding: 10px; border: 1px solid #000;
+    background-color: #fff; color: #000; font-size: 1rem;
+    border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+.form-group textarea { min-height: 100px; resize: vertical; }
+.services-needed { margin-top: 25px; margin-bottom: 30px; }
+.services-needed label { font-size: 0.9rem; font-weight: 400; }
+.checkbox-group label {
+    display: flex; align-items: center; font-size: 1rem;
+    font-weight: 300; margin-bottom: 5px; cursor: pointer;
+}
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px; width: 16px; height: 16px;
+    -webkit-appearance: none; -moz-appearance: none; appearance: none;
+    border: 1px solid #000; cursor: pointer;
+}
+.checkbox-group input[type="checkbox"]:checked { background-color: #000; }
+
+.submit-button {
+    display: block; width: 100%; padding: 15px 20px;
+    background-color: #fff; border: 1px solid #000;
+    color: #000; font-family: inherit; font-size: 1rem;
+    font-weight: 500; text-transform: uppercase; cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 0;
+}
+.submit-button:hover { background-color: #000; color: #fff; }
